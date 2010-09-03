@@ -1,0 +1,9 @@
+SilentPostgres
+==============
+
+Silences internal diagnostic messages from postgresql connection adapter.
+
+Enabled only in development and test environments, skips production for 
+performance reasons - logging is probably disabled there anyway.
+
+Copyright (c) 2008 Łukasz Piestrzeniewicz, released under the MIT license
