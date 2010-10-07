@@ -1,3 +1,5 @@
+# coding: utf-8
+
 Gem::Specification.new do |s|
   s.name = %q{silent-postgres}
   s.version = "0.0.4"
