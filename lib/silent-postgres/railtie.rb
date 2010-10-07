@@ -1,6 +1,5 @@
 module SilentPostgres
   def self.init!
-    puts "Silencing Postgres"
     ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.send(:include, SilentPostgres)
   end
 
