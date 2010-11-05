@@ -1,4 +1,4 @@
-if %w(test development).include?(ENV["RAILS_ENV"])
+if %w(test development).include?(Rails.respond_to?(:env) ? Rails.env : ENV["RAILS_ENV"])
 
   require "silent-postgres/railtie"
 
