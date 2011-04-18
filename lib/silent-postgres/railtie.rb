@@ -1,6 +1,7 @@
 module SilentPostgres
   def self.init!
     ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.send(:include, SilentPostgres)
+  rescue NameError
   end
 
   if defined?(Rails::Railtie)
