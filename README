@@ -6,4 +6,14 @@ Silences internal diagnostic messages from postgresql connection adapter.
 Enabled only in development and test environments, skips production for 
 performance reasons - logging is probably disabled there anyway.
 
+Note that postgresql itself will also issue some extra logs for things like `implicit sequences`.  Looks like this:
+
+    NOTICE: CREATE TABLE / PRIMARY KEY will create implicit index ...
+
+To disable this logging, use this config option in your Rails `database.yml`
+
+    test:
+      ...
+      min_messages: WARNING
+
 Copyright (c) 2008 Łukasz Piestrzeniewicz, released under the MIT license
