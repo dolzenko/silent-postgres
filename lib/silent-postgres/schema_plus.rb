@@ -10,7 +10,7 @@ module SilentPostgresSchemaPlus
   SILENCED_METHODS.each do |m|
     eval <<-METHOD
       def #{m}_with_silencer(*args)
-        @logger.silence do
+        @logger.quietly do
           #{m}_without_silencer(*args)
         end
       end
