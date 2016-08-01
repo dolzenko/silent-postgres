@@ -8,7 +8,8 @@ if Rails.env.development? || Rails.env.test?
 
     def self.included(base)
       SILENCED_METHODS.each do |m|
-        base.send :alias_method_chain, m, :silencer
+        base.send :alias_method, "#{m}_without_silencer", m
+        base.send :alias_method, m, "#{m}_with_silencer"
       end
     end
 
